@@ -21,6 +21,24 @@
     justify-content: center;
     align-items: center;
 }
+.cell-9{
+    width: calc(100% / 9);
+    aspect-ratio: 1;
+    background-color: brown;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cell-7{
+    width: calc(100% / 7);
+    aspect-ratio: 1;
+    background-color: brown;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .azure{
     background-color: azure;
 }
