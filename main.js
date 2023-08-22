@@ -44,14 +44,20 @@ function generaGriglia(size){
         else if(size == 9){
             cell.classList.add("cell-9");
         }
-        else if(size == 7){
+        else 
             cell.classList.add("cell-7");
-        }
+        
 
         
         cell.innerText = i;
         cell.addEventListener("click", function(){
-            this.classList.add("green");
+            if(i % 2 == 0){
+                this.classList.add("green");
+            }
+            else 
+            this.classList.add("red");
+
+            
             console.log(i);
         })
         grid.append(cell);
