@@ -1,28 +1,41 @@
 const buttonGenerator = document.getElementById("generator");
 
-const buttonGenerator2 = document.getElementById("generator-2");
-
-const buttonGenerator3 = document.getElementById("generator-3");
+const difficultyselect = document.getElementById("difficult");
 
 
 const grid = document.getElementById("griglia");
 
 buttonGenerator.addEventListener("click", function(){
-    generaGriglia(10);
+    const difficult = parseInt(difficultyselect.value);
+    console.log(difficult);
+    let size = "";
+    if(difficult == 1){
+        size = 7;
+        console.log(size);
+    }
+    else if(difficult == 2){
+        size = 9;
+    }
+    else if(difficult == 3){
+        size = 10;
+    }
+    generaGriglia(size);
 })
 
-buttonGenerator2.addEventListener("click", function(){
-    generaGriglia(9);
-})
 
-buttonGenerator3.addEventListener("click", function(){
-    generaGriglia(7);
-})
+
+
 
 
 
 function generaGriglia(size){
+    
+    
+    grid.innerHTML = "";
+
+
     for(let i = 1; i <= size * size; i++){
+        
         const cell = document.createElement("div");
         
         if(size == 10){
@@ -38,10 +51,10 @@ function generaGriglia(size){
         
         cell.innerText = i;
         cell.addEventListener("click", function(){
-            this.classList.add("azure");
+            this.classList.add("green");
             console.log(i);
         })
         grid.append(cell);
     }
-
+    
 }
